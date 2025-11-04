@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int TOP = -1, MAX;
+char *stack;
+
+void push(char item) {
+    if (TOP == MAX - 1) {
+        printf("Stack overflow\n");
+    } else {
+        TOP = TOP + 1;
+        stack[TOP] = item;
+    }
+}
+
+char pop() {
+    if (TOP == -1) {
+        printf("Stack underflow/empty\n");
+        return '\0';
+    } else {
+        char item = stack[TOP];
+        TOP = TOP - 1;
+        return item;
+    }
+}
+
+void stringreversal() {
+    char string[MAX + 1];
+    printf("Please enter the string of size up to %d to reverse: ", MAX);
+    scanf("%s", string);
+    for (int c = 0; string[c] != '\0'; c++) {
+        push(string[c]);
+    }
+
+    printf("Reversed string: ");
+    while (TOP != -1) {
+        printf("%c", pop());
+    }
+    printf("\n");
+}
+
+int main() {
+    printf("Enter the size of char stack: ");
+    scanf("%d", &MAX);
+    stack = (char *)malloc(MAX * sizeof(char));
+    if (stack == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
+    stringreversal();
+
+    free(stack);
+    return 0;
+}

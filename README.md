@@ -17,3 +17,4 @@ Each program is implemented in **C language**, focusing on understanding the cor
 | 6. | **LinkedList-Insertion-at-End** | Program to insert an element at the end of a linked list |
 | 7. | **SimpleQueue** | Implementation of a simple queue using arrays |
 | 8. | **StringReversal** | Program to reverse a string using a stack |
+| 9. | **CircularQueue** | A circular queue reuses emptied spots by connecting the end back to the start |

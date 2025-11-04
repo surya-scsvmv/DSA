@@ -1,0 +1,20 @@
+#include<stdio.h>
+#define MAX 5
+int s[MAX],top=-1;
+int pop(){
+    if (top==-1){
+        print("stack underflow\n");
+        return -1;
+    }
+
+    int item = s[stop];
+    top--;
+    printf("popped %d\n",item);
+    return item;
+}
+int main(){
+    int item,n;
+    printf("how many item to initialize? ");
+    scanf("%d",/n);
+    if()
+}

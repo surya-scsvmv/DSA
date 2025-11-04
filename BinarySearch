@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int n, low = 0, high, mid, KEY, i;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int a[n];
+    printf("Enter the elements: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+    
+    printf("Enter the element to search: ");
+    scanf("%d", &KEY);
+    
+    high = n - 1;
+    int found = 0;
+    
+    while (low <= high) {
+        mid = (low + high) / 2;
+        
+        if (a[mid] == KEY) {
+            printf("The element is found at index %d\n", mid);
+            found = 1;
+            break;
+        }
+        else if (a[mid] < KEY) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    
+    if (!found) {
+        printf("The element is not found\n");
+    }
+    
+    return 0;
+}
+

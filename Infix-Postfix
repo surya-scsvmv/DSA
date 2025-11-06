@@ -1,98 +1,67 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h> 
+#include <ctype.h>
 
-int top = -1, max;
+int top = -1, size;
 char *stack;
 
-void display() {
-    printf("Current stack elements are: ");
-    for (int i = 0; i <= top; i++) {
-        printf("[%c]", stack[i]);
-    }
-    printf("\n");
-}
-
-void push(char item) {
-    if (top == max - 1) {
-        printf("Stack Overflow!\n");
-    } else {
-        top++;
-        stack[top] = item;
-    }
+void push(char c) {
+    if(top == size-1)
+        printf("Stack full\n");
+    else
+        stack[++top] = c;
 }
 
 char pop() {
-    if (top == -1) {
-        printf("Stack Underflow!\n");
+    if(top == -1)
         return '\0';
-    } else {
-        return stack[top--];
-    }
+    return stack[top--];
 }
 
 char peek() {
-    if (top == -1)
-        return '\0';
-    else
-        return stack[top];
+    if(top == -1) return '\0';
+    return stack[top];
 }
 
-int get_precedence(char op) {
-    switch (op) {
-        case '+':
-        case '-':
-            return 1;
-        case '*':
-        case '/':
-            return 2;
-        case '^':
-            return 3;
-        default:
-            return 0;
-    }
+int prec(char op) {
+    if(op=='+' || op=='-') return 1;
+    if(op=='*' || op=='/') return 2;
+    if(op=='^') return 3;
+    return 0;
 }
 
 int main() {
-    printf("Enter the size of infix expression: ");
-    scanf("%d", &max);
+    printf("Enter max size: ");
+    scanf("%d", &size);
+    stack = malloc(size * sizeof(char));
 
-    stack = (char *)malloc(max * sizeof(char));
-    char infix[max], postfix[max];
-    printf("Enter the infix expression: ");
+    char infix[size], postfix[size];
+    printf("Enter infix expression: ");
     scanf("%s", infix);
 
-    int i = 0, j = 0;
+    int i=0, j=0;
     char c;
-
-    while ((c = infix[i]) != '\0') {
-        if (isalnum(c)) { 
+    while((c=infix[i++])!='\0') {
+        if(isalnum(c))
             postfix[j++] = c;
-        } 
-        else if (c == '(') {
+        else if(c=='(')
             push(c);
-        } 
-        else if (c == ')') {
-            while (peek() != '(' && peek() != '\0') {
+        else if(c==')') {
+            while(peek()!='(' && peek()!='\0')
                 postfix[j++] = pop();
-            }
-            pop(); 
-        } 
-        else { 
-            while (get_precedence(c) <= get_precedence(peek()) && peek() != '\0') {
+            pop();
+        } else {
+            while(prec(peek()) >= prec(c))
                 postfix[j++] = pop();
-            }
             push(c);
         }
-        i++;
     }
 
-    while (peek() != '\0') {
+    while(peek()!='\0')
         postfix[j++] = pop();
-    }
 
     postfix[j] = '\0';
-    printf("Postfix notation is: %s\n", postfix);
+    printf("Postfix: %s\n", postfix);
 
     free(stack);
     return 0;

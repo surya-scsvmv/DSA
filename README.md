@@ -1,26 +1,26 @@
 # 🧠 Data Structures and Algorithms (DSA) Lab Record
 
 This repository contains all my **Data Structures and Algorithms (DSA)** lab programs written in **C**.  
-Each experiment is implemented from scratch and focuses on understanding how different data structures actually work under the hood.
+Each program is implemented from scratch and focuses on understanding how data structures actually work internally — rather than just using built-in features.
 
 ---
 
 ## 📘 Overview
 
-All programs were done as part of my **DSA Lab sessions**, covering basic to intermediate data structure concepts — arrays, stacks, queues, linked lists, and expression conversions.
+All programs were developed as part of the **DSA Lab sessions**, covering fundamental to intermediate topics like searching, stacks, queues, string manipulation, and linked lists.
 
 ---
 
 ## 📂 Programs List
 
-| No. | Program | Description |
-|:--:|:-----------------------------|:------------------------------------------------|
-| 1 | **LinearSearch** | Searches for an element sequentially in an array |
-| 2 | **BinarySearch** | Searches for an element using divide-and-conquer |
-| 3 | **StackPush** | Performs stack push operation using arrays |
-| 4 | **StackPop** | Performs stack pop operation from a stack |
-| 5 | **Infix-Postfix** | Converts an infix expression into postfix form |
-| 6 | **LinkedList-Insertion-at-End** | Inserts a new node at the end of a linked list |
-| 7 | **SimpleQueue** | Basic queue implementation using arrays |
-| 8 | **StringReversal** | Reverses a string using stack operations |
-| 9 | **CircularQueue** | Implements a circular queue to reuse memory efficiently |
+| No. | File Name | Description |
+|:--:|:---------------------------|:------------------------------------------------|
+| 1 | **01. LinearSearch.c** | Searches for an element sequentially in an array |
+| 2 | **02. BinarySearch.c** | Searches for an element using divide-and-conquer logic |
+| 3 | **03. StackPush.c** | Demonstrates the push operation in a stack |
+| 4 | **04. StackPop.c** | Demonstrates the pop operation in a stack |
+| 5 | **05. StringReversal.c** | Reverses a string using stack operations |
+| 6 | **06. Infix-Postfix.c** | Converts an infix expression into postfix notation |
+| 7 | **07. SimpleQueue.c** | Implements a basic queue using arrays |
+| 8 | **08. CircularQueue.c** | Implements a circular queue that efficiently reuses space |
+| 9 | **09. LinkedList.c** | Full linked list implementation (insertion, deletion, traversal, etc.) |

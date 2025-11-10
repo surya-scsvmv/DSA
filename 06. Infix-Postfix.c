@@ -1,3 +1,8 @@
+/*
+Aim:
+To perform Linear Search on an array to find a given element.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>

@@ -1,6 +1,6 @@
 /*
 Aim:
-To perform Linear Search on an array to find a given element.
+To perform insertion, deletion, and traversal in a linked list.
 */
 
 #include <stdio.h>

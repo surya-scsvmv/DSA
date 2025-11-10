@@ -15,12 +15,12 @@ All programs were developed as part of the **DSA Lab sessions**, covering fundam
 
 | No. | File Name | Description |
 |:--:|:---------------------------|:------------------------------------------------|
-| 1 | **01. LinearSearch.c** | Searches for an element sequentially in an array |
-| 2 | **02. BinarySearch.c** | Searches for an element using divide-and-conquer logic |
-| 3 | **03. StackPush.c** | Demonstrates the push operation in a stack |
-| 4 | **04. StackPop.c** | Demonstrates the pop operation in a stack |
-| 5 | **05. StringReversal.c** | Reverses a string using stack operations |
-| 6 | **06. Infix-Postfix.c** | Converts an infix expression into postfix notation |
-| 7 | **07. SimpleQueue.c** | Implements a basic queue using arrays |
-| 8 | **08. CircularQueue.c** | Implements a circular queue that efficiently reuses space |
-| 9 | **09. LinkedList.c** | Full linked list implementation (insertion, deletion, traversal, etc.) |
+| 1 | **Linear Search** | Searches for an element sequentially in an array |
+| 2 | **Binary Search** | Searches for an element using divide-and-conquer logic |
+| 3 | **Stack Push** | Demonstrates the push operation in a stack |
+| 4 | **Stack Pop** | Demonstrates the pop operation in a stack |
+| 5 | **String Reversal** | Reverses a string using stack operations |
+| 6 | **Infix to Postfix** | Converts an infix expression into postfix notation |
+| 7 | **Simple Queue** | Implements a basic queue using arrays |
+| 8 | **Circular Queue** | Implements a circular queue that efficiently reuses space |
+| 9 | **Linked List** | Full linked list implementation (insertion, deletion, traversal, etc.) |

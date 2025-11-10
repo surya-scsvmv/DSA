@@ -7,7 +7,18 @@ Each program is implemented from scratch and focuses on understanding how data s
 
 ## 📘 Overview
 
-All programs were developed as part of the **DSA Lab sessions**, covering fundamental to intermediate topics like searching, stacks, queues, string manipulation, and linked lists.
+All programs were developed as part of the **DSA Lab sessions** under the **Department of Computer Science and Engineering (Artificial Intelligence and Data Science)** at **SCSVMV University**.  
+These experiments cover fundamental to intermediate concepts such as searching, stacks, queues, string manipulation, and linked lists.
+
+---
+
+## 👨‍💻 Student Details
+
+- **Name:** Penumarthi Phanindra Surya Prabhas  
+- **Register No:** 11249A284  
+- **Department:** CSE (AIDS)  
+- **Institution:** Sri Chandrasekharendra Saraswathi Viswa Mahavidyalaya (SCSVMV)  
+- **GitHub Username:** [@surya-scsvmv](https://github.com/surya-scsvmv)
 
 ---
 

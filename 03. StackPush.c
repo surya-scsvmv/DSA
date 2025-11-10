@@ -1,6 +1,6 @@
 /*
 Aim:
-To perform Linear Search on an array to find a given element.
+To implement stack push operation using arrays.
 */
 
 #include <stdio.h>

@@ -1,6 +1,6 @@
 /*
 Aim:
-To perform Linear Search on an array to find a given element.
+To perform Binary Search on a sorted array.
 */
 
 #include <stdio.h>

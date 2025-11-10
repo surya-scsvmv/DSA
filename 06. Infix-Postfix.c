@@ -1,6 +1,6 @@
 /*
 Aim:
-To perform Linear Search on an array to find a given element.
+To convert an infix expression to postfix using stack.
 */
 
 #include <stdio.h>

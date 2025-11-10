@@ -1,6 +1,6 @@
 /*
 Aim:
-To perform Linear Search on an array to find a given element.
+To reverse a string using stack.
 */
 
 #include <stdio.h>

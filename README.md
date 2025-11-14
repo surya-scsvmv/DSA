@@ -1,14 +1,15 @@
 # 🧠 Data Structures and Algorithms (DSA) Lab Record
 
-This repository contains all my **Data Structures and Algorithms (DSA)** lab programs written in **C**.  
-Each program is implemented from scratch and focuses on understanding how data structures actually work internally — rather than just using built-in features.
+This repository contains all my **Data Structures and Algorithms (DSA)** lab programs written in **C**, implemented from scratch to understand how core data structures work internally.
 
 ---
 
 ## 📘 Overview
 
-All programs were developed as part of the **DSA Lab sessions** under the **Department of Computer Science and Engineering (Artificial Intelligence and Data Science)** at **SCSVMV University**.  
-These experiments cover fundamental to intermediate concepts such as searching, stacks, queues, string manipulation, and linked lists.
+All programs were developed as part of the **DSA Laboratory** under the  
+**Department of Computer Science and Engineering (Artificial Intelligence and Data Science)** at **SCSVMV University**.
+
+The experiments cover essential concepts such as searching, stacks, queues, string processing, singly linked lists, and doubly linked lists.
 
 ---
 
@@ -25,13 +26,16 @@ These experiments cover fundamental to intermediate concepts such as searching, 
 ## 📂 Programs List
 
 | No. | File Name | Description |
-|:--:|:---------------------------|:------------------------------------------------|
-| 1 | **Linear Search** | Searches for an element sequentially in an array |
-| 2 | **Binary Search** | Searches for an element using divide-and-conquer logic |
-| 3 | **Stack Push** | Demonstrates the push operation in a stack |
-| 4 | **Stack Pop** | Demonstrates the pop operation in a stack |
-| 5 | **String Reversal** | Reverses a string using stack operations |
-| 6 | **Infix to Postfix** | Converts an infix expression into postfix notation |
-| 7 | **Simple Queue** | Implements a basic queue using arrays |
-| 8 | **Circular Queue** | Implements a circular queue that efficiently reuses space |
-| 9 | **Linked List** | Full linked list implementation (insertion, deletion, traversal, etc.) |
+|:--:|:------------------------------|:------------------------------------------------------------|
+| 1 | **Linear Search** | Sequential search in an array |
+| 2 | **Binary Search** | Efficient divide-and-conquer search algorithm |
+| 3 | **Stack Push** | Demonstrates push operation in a stack |
+| 4 | **Stack Pop** | Demonstrates pop operation in a stack |
+| 5 | **String Reversal** | Reverses a string using a stack |
+| 6 | **Infix to Postfix** | Converts infix expressions to postfix |
+| 7 | **Simple Queue** | Basic queue implementation using arrays |
+| 8 | **Circular Queue** | Queue with efficient circular indexing |
+| 9 | **Singly Linked List** | Basic linked list operations (insert/delete/traverse) |
+| 10 | **Doubly Linked List** | Doubly linked list with insertion, deletion, forward & backward traversal |
+
+---

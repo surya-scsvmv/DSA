@@ -1,3 +1,8 @@
+/*
+Aim:
+To create a doubly linked list in C and perform insertions, deletion, and forward/backward traversal.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

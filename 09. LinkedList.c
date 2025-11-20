@@ -1,163 +1,176 @@
 /*
-Aim:
-To perform insertion, deletion, and traversal in a linked list.
+  Aim:
+  Perform insertion, deletion and traversal on a singly linked list.
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 
+// Simple node structure
 struct Node {
     int data;
     struct Node *next;
 };
 
-struct Node *CreateNode(int data) {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    if (!newNode) {
-        printf("Memory allocation failed!\n");
+// Create a new node (basic wrapper)
+struct Node* createNode(int val) {
+    struct Node *t = (struct Node*)malloc(sizeof(struct Node));
+    if(t == NULL) {
+        printf("Memory error!\n");
         return NULL;
     }
-    newNode->data = data;
-    newNode->next = NULL;
-    return newNode;
+    t->data = val;
+    t->next = NULL;
+    return t;
 }
 
-void InsertAtBeginning(struct Node **head, int data) {
-    struct Node *newNode = CreateNode(data);
-    newNode->next = *head;
-    *head = newNode;
-    printf("Inserted %d at the beginning.\n", data);
+// Insert at beginning
+void insertBeg(struct Node **head, int val) {
+    struct Node *t = createNode(val);
+    t->next = *head;      // new node -> old head
+    *head = t;            // head moved to new node
+    printf("Inserted %d at beginning\n", val);
 }
 
-void InsertAtEnd(struct Node **head, int data) {
-    struct Node *newNode = CreateNode(data);
-    if (*head == NULL) {
-        *head = newNode;
-    } else {
-        struct Node *temp = *head;
-        while (temp->next != NULL)
-            temp = temp->next;
-        temp->next = newNode;
+// Insert at end
+void insertEnd(struct Node **head, int val) {
+    struct Node *t = createNode(val);
+
+    if(*head == NULL) {       // empty list case
+        *head = t;
+        printf("Inserted %d at end\n", val);
+        return;
     }
-    printf("Inserted %d at the end.\n", data);
+
+    struct Node *cur = *head;
+    while(cur->next != NULL)  // go till last node
+        cur = cur->next;
+
+    cur->next = t;
+    printf("Inserted %d at end\n", val);
 }
 
-void InsertAtPosition(struct Node **head, int data, int position) {
-    if (position < 1) {
+// Insert at any position (1-based indexing)
+void insertPos(struct Node **head, int val, int pos) {
+    if(pos <= 0) {
         printf("Invalid position!\n");
         return;
     }
 
-    if (position == 1) {
-        InsertAtBeginning(head, data);
+    if(pos == 1) {
+        insertBeg(head, val);
         return;
     }
 
-    struct Node *prev = *head;
-    for (int k = 1; k < position - 1 && prev != NULL; k++) {
-        prev = prev->next;
+    struct Node *cur = *head;
+    for(int i = 1; i < pos - 1 && cur != NULL; i++) {
+        cur = cur->next;
     }
 
-    if (prev == NULL) {
+    if(cur == NULL) {
         printf("Position out of range!\n");
         return;
     }
 
-    struct Node *newNode = CreateNode(data);
-    newNode->next = prev->next;
-    prev->next = newNode;
-    printf("Inserted %d at position %d.\n", data, position);
+    struct Node *t = createNode(val);
+    t->next = cur->next;
+    cur->next = t;
+
+    printf("Inserted %d at position %d\n", val, pos);
 }
 
-void DeleteNode(struct Node **head, int valueToDelete) {
-    if (*head == NULL) {
-        printf("The list is empty.\n");
+// Delete a node by value
+void deleteVal(struct Node **head, int val) {
+    if(*head == NULL) {
+        printf("List empty\n");
         return;
     }
 
-    struct Node *temp = *head;
+    struct Node *cur = *head;
 
-    if (temp->data == valueToDelete) {
-        *head = temp->next;
-        free(temp);
-        printf("Deleted %d from the list.\n", valueToDelete);
+    // if the node to delete is the head
+    if(cur->data == val) {
+        *head = cur->next;
+        free(cur);
+        printf("Deleted %d\n", val);
         return;
     }
 
-    struct Node *prev = *head;
-    while (prev->next != NULL) {
-        if (prev->next->data == valueToDelete) {
-            temp = prev->next;
-            prev->next = temp->next;
-            free(temp);
-            printf("Deleted %d from the list.\n", valueToDelete);
-            return;
-        }
-        prev = prev->next;
+    struct Node *prev = NULL;
+    while(cur != NULL && cur->data != val) {
+        prev = cur;
+        cur = cur->next;
     }
 
-    printf("Value %d not found in the list.\n", valueToDelete);
+    if(cur == NULL) {
+        printf("Value %d not found\n", val);
+        return;
+    }
+
+    prev->next = cur->next;
+    free(cur);
+    printf("Deleted %d\n", val);
 }
 
-void DisplayList(struct Node *head) {
-    if (head == NULL) {
-        printf("The list is empty.\n");
+// Print all nodes
+void display(struct Node *head) {
+    if(head == NULL) {
+        printf("List empty\n");
         return;
     }
 
-    struct Node *temp = head;
-    printf("\nCurrent Linked List:\n");
-    while (temp != NULL) {
-        printf("[%d] -> ", temp->data);
-        temp = temp->next;
+    struct Node *cur = head;
+    printf("List: ");
+    while(cur != NULL) {
+        printf("%d -> ", cur->data);
+        cur = cur->next;
     }
     printf("NULL\n");
 }
 
 int main() {
     struct Node *head = NULL;
-    int choice, data, pos;
+    int ch, val, pos;
 
-    while (1) {
-        printf("\n--- Linked List Menu ---\n");
-        printf("1. Insert at Beginning\n");
-        printf("2. Insert at End\n");
-        printf("3. Insert at Position\n");
-        printf("4. Delete by Value\n");
-        printf("5. Display List\n");
-        printf("6. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
+    while(1) {
+        printf("\n1.Insert Beg\n2.Insert End\n3.Insert Pos\n4.Delete\n5.Display\n6.Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &ch);
 
-        switch (choice) {
+        switch(ch) {
             case 1:
-                printf("Enter data: ");
-                scanf("%d", &data);
-                InsertAtBeginning(&head, data);
+                printf("Enter value: ");
+                scanf("%d", &val);
+                insertBeg(&head, val);
                 break;
+
             case 2:
-                printf("Enter data: ");
-                scanf("%d", &data);
-                InsertAtEnd(&head, data);
+                printf("Enter value: ");
+                scanf("%d", &val);
+                insertEnd(&head, val);
                 break;
+
             case 3:
-                printf("Enter data and position: ");
-                scanf("%d %d", &data, &pos);
-                InsertAtPosition(&head, data, pos);
+                printf("Enter value and position: ");
+                scanf("%d %d", &val, &pos);
+                insertPos(&head, val, pos);
                 break;
+
             case 4:
                 printf("Enter value to delete: ");
-                scanf("%d", &data);
-                DeleteNode(&head, data);
+                scanf("%d", &val);
+                deleteVal(&head, val);
                 break;
+
             case 5:
-                DisplayList(head);
+                display(head);
                 break;
+
             case 6:
-                printf("Goodbye!\n");
                 exit(0);
+
             default:
-                printf("Invalid choice, please try again.\n");
+                printf("Invalid choice!\n");
         }
     }
 

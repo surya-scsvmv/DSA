@@ -1,140 +1,181 @@
 /*
-Aim:
-To create a doubly linked list in C and perform insertions, deletion, and forward/backward traversal.
+  Aim:
+  Create a doubly linked list and perform insertion, deletion
+  and forward/backward traversal.
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 
+// Node structure for DLL
 struct Node {
     int data;
-    struct Node* next;
-    struct Node* prev;
+    struct Node *next;
+    struct Node *prev;
 };
 
-struct Node* head = NULL;
+struct Node *head = NULL;   // start of the list
 
-void insertAtBeginning(int data) {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    newNode->data = data;
-    newNode->prev = NULL;
-    newNode->next = head;
-    if (head != NULL) {
-        head->prev = newNode;
-    }
-    head = newNode;
-}
-
-void insertAtEnd(int data) {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    newNode->data = data;
-    newNode->next = NULL;
-    if (head == NULL) {
-        newNode->prev = NULL;
-        head = newNode;
+// Insert at beginning of DLL
+void insertBeg(int val) {
+    struct Node *t = (struct Node*)malloc(sizeof(struct Node));
+    if(t == NULL) {
+        printf("Memory error\n");
         return;
     }
-    struct Node* temp = head;
-    while (temp->next != NULL) {
-        temp = temp->next;
+
+    t->data = val;
+    t->prev = NULL;
+    t->next = head;
+
+    if(head != NULL) {
+        head->prev = t;     // link old head back to new node
     }
-    temp->next = newNode;
-    newNode->prev = temp;
+
+    head = t;
+    printf("Inserted %d at beginning\n", val);
 }
 
-void deleteNode(int key) {
-    struct Node* current = head;
-    while (current != NULL && current->data != key) {
-        current = current->next;
-    }
-    if (current == NULL) {
-        printf("Node with data %d not found.\n", key);
+// Insert at end of DLL
+void insertEnd(int val) {
+    struct Node *t = (struct Node*)malloc(sizeof(struct Node));
+    if(t == NULL) {
+        printf("Memory error\n");
         return;
     }
-    if (current->prev != NULL) {
-        current->prev->next = current->next;
+
+    t->data = val;
+    t->next = NULL;
+
+    if(head == NULL) {
+        t->prev = NULL;
+        head = t;
+        printf("Inserted %d at end\n", val);
+        return;
+    }
+
+    struct Node *cur = head;
+    while(cur->next != NULL)
+        cur = cur->next;
+
+    cur->next = t;
+    t->prev = cur;
+
+    printf("Inserted %d at end\n", val);
+}
+
+// Delete node by value
+void deleteVal(int key) {
+    if(head == NULL) {
+        printf("List empty\n");
+        return;
+    }
+
+    struct Node *cur = head;
+
+    // find the node
+    while(cur != NULL && cur->data != key)
+        cur = cur->next;
+
+    if(cur == NULL) {
+        printf("Value %d not found\n", key);
+        return;
+    }
+
+    // if deleting the first node
+    if(cur->prev == NULL) {
+        head = cur->next;
+        if(head != NULL)
+            head->prev = NULL;
     } else {
-        head = current->next;
+        cur->prev->next = cur->next;
     }
-    if (current->next != NULL) {
-        current->next->prev = current->prev;
-    }
-    free(current);
-    printf("Node with data %d deleted.\n", key);
+
+    // connect the next node back if exists
+    if(cur->next != NULL)
+        cur->next->prev = cur->prev;
+
+    free(cur);
+    printf("Deleted %d\n", key);
 }
 
+// Print DLL from left to right
 void displayForward() {
-    struct Node* node = head;
-    printf("Forward Traversal: ");
-    while (node != NULL) {
-        printf("%d -> ", node->data);
-        node = node->next;
+    if(head == NULL) {
+        printf("List empty\n");
+        return;
+    }
+
+    struct Node *cur = head;
+    printf("Forward: ");
+
+    while(cur != NULL) {
+        printf("%d -> ", cur->data);
+        cur = cur->next;
     }
     printf("NULL\n");
 }
 
+// Print DLL from right to left
 void displayBackward() {
-    struct Node* node = head;
-    printf("Backward Traversal: ");
-    if (node == NULL) {
-        printf("NULL\n");
+    if(head == NULL) {
+        printf("List empty\n");
         return;
     }
-    while (node->next != NULL) {
-        node = node->next;
-    }
-    while (node != NULL) {
-        printf("%d <- ", node->data);
-        node = node->prev;
+
+    // go to last node
+    struct Node *cur = head;
+    while(cur->next != NULL)
+        cur = cur->next;
+
+    printf("Backward: ");
+    while(cur != NULL) {
+        printf("%d <- ", cur->data);
+        cur = cur->prev;
     }
     printf("NULL\n");
 }
 
 int main() {
-    int choice, data, key;
+    int ch, val, key;
 
-    while (1) {
-        printf("\n\n--- Double Linked List Menu ---\n");
-        printf("1. Insert at Beginning\n");
-        printf("2. Insert at End\n");
-        printf("3. Delete Node by Value\n");
-        printf("4. Display Forward\n");
-        printf("5. Display Backward\n");
-        printf("6. Exit\n");
-        printf("Enter your choice: ");
-        if (scanf("%d", &choice) != 1) {
+    while(1) {
+        printf("\n1.Insert Beg\n2.Insert End\n3.Delete\n4.Display Forward\n5.Display Backward\n6.Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &ch);
 
-            while (getchar() != '\n'); 
-            choice = 0; 
-        }
-
-        switch (choice) {
+        switch(ch) {
             case 1:
-                printf("Enter data to insert at beginning: ");
-                scanf("%d", &data);
-                insertAtBeginning(data);
+                printf("Enter value: ");
+                scanf("%d", &val);
+                insertBeg(val);
                 break;
+
             case 2:
-                printf("Enter data to insert at end: ");
-                scanf("%d", &data);
-                insertAtEnd(data);
+                printf("Enter value: ");
+                scanf("%d", &val);
+                insertEnd(val);
                 break;
+
             case 3:
-                printf("Enter value of node to delete: ");
+                printf("Enter value to delete: ");
                 scanf("%d", &key);
-                deleteNode(key);
+                deleteVal(key);
                 break;
+
             case 4:
                 displayForward();
                 break;
+
             case 5:
                 displayBackward();
                 break;
+
             case 6:
-                printf("Exiting program.\n");
                 exit(0);
+
             default:
-                printf("Invalid choice. Please enter a number between 1 and 6.\n");
+                printf("Invalid choice\n");
         }
     }
 

@@ -1,32 +1,4 @@
-Aim:
-To implement Depth First Search (DFS) traversal for a binary tree and display the nodes using Preorder, Inorder, and Postorder traversals.
-Algorithm:
-Algorithm for DFS Traversals
 
-Algorithm: Preorder Traversal
-
-PREORDER(node)
-1. If node is not NULL:
-2.    Visit(node)
-3.    PREORDER(node->left)
-4.    PREORDER(node->right)
-
-Algorithm: Inorder Traversal
-
-INORDER(node)
-1. If node is not NULL:
-2.    INORDER(node->left)
-3.    Visit(node)
-4.    INORDER(node->right)
-
-Algorithm: Postorder Traversal
-
-POSTORDER(node)
-1. If node is not NULL:
-2.    POSTORDER(node->left)
-3.    POSTORDER(node->right)
-4.    Visit(node)
-Program:
 #include <stdio.h>
 #include <stdlib.h>
 struct node {
@@ -85,9 +57,3 @@ int main() {
 
     return 0;
 }
-output:
-DFS - Preorder: 1 2 4 5 3
-DFS - Inorder : 4 2 5 1 3
-DFS - Postorder: 4 5 2 3 1
-Result:
-hence the tree traversalof DFS is executed successfully 

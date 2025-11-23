@@ -26,18 +26,20 @@ The record covers essential concepts such as searching, stacks, queues, string o
 ## 📂 Programs List
 
 | No. | File Name | Description |
-|:--:|:-------------------------------------|:-----------------------------------------------------------|
+|:--:|:------------------------------------------------------------|:-----------------------------------------------------------|
 | 1 | **Linear Search** | Linear / Sequential Search |
 | 2 | **Binary Search** | Binary Search (Divide & Conquer) |
 | 3 | **Stack Operations Using Array** | Full stack implementation using arrays |
-| 4 | **String Reversal** | Reverse a string using stack |
+| 4 | **String Reversal** | Reverse a string using a stack |
 | 5 | **Infix-Postfix** | Convert infix expression to postfix |
-| 6 | **Queue Operations Using Array** | Queue implementation (enqueue/dequeue) |
+| 6 | **Queue Operations Using Array** | Queue implementation using arrays |
 | 7 | **Single Linked List** | All operations on singly linked list |
 | 8 | **Doubly Linked List** | All operations on doubly linked list |
-| 9 | **Tree Traversal – DFS** | Depth First Search (Pre/In/Post Order) |
-| 10 | **Tree Traversal – BFS** | Breadth First Search using queue |
-| 11 | **Quick Sort** | Quick Sort algorithm |
-| 12 | **Quick Merge** | Merge Sort algorithm |
+| 9 | **Stack using Linked List** | Stack implementation using linked list |
+| 10 | **Circular Queue Operations Using Linked List** | Circular queue using linked list |
+| 11 | **Tree Traversal – DFS** | Depth First Search (Pre/In/Post Order) |
+| 12 | **Tree Traversal – BFS** | Breadth First Search using queue |
+| 13 | **Quick Sort** | Quick Sort algorithm |
+| 14 | **Quick Merge** | Merge Sort algorithm |
 
 ---

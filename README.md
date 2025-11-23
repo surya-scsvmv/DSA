@@ -27,17 +27,17 @@ The record covers essential concepts such as searching, stacks, queues, string o
 
 | No. | File Name | Description |
 |:--:|:-------------------------------------|:-----------------------------------------------------------|
-| 1 | **01. LinearSearch.c** | Linear / Sequential Search |
-| 2 | **02. BinarySearch.c** | Binary Search (Divide & Conquer) |
-| 3 | **03. Stack Operations Using Array.c** | Full stack implementation using arrays |
-| 4 | **04. StringReversal.c** | Reverse a string using stack |
-| 5 | **05. Infix-Postfix.c** | Convert infix expression to postfix |
-| 6 | **06. Queue Operations Using Array.c** | Queue implementation (enqueue/dequeue) |
-| 7 | **09. Single Linked List.c** | All operations on singly linked list |
-| 8 | **10. Doubly Linked List.c** | All operations on doubly linked list |
-| 9 | **11. Tree Traversal – DFS.c** | Depth First Search (Pre/In/Post Order) |
-| 10 | **12. Tree Traversal – BFS.c** | Breadth First Search using queue |
-| 11 | **13(a). QuickSort.c** | Quick Sort algorithm |
-| 12 | **13(b). QuickMerge.c** | Merge Sort algorithm |
+| 1 | **Linear Search** | Linear / Sequential Search |
+| 2 | **Binary Search** | Binary Search (Divide & Conquer) |
+| 3 | **Stack Operations Using Array** | Full stack implementation using arrays |
+| 4 | **String Reversal** | Reverse a string using stack |
+| 5 | **Infix-Postfix** | Convert infix expression to postfix |
+| 6 | **Queue Operations Using Array** | Queue implementation (enqueue/dequeue) |
+| 7 | **Single Linked List** | All operations on singly linked list |
+| 8 | **Doubly Linked List** | All operations on doubly linked list |
+| 9 | **Tree Traversal – DFS** | Depth First Search (Pre/In/Post Order) |
+| 10 | **Tree Traversal – BFS** | Breadth First Search using queue |
+| 11 | **Quick Sort** | Quick Sort algorithm |
+| 12 | **Quick Merge** | Merge Sort algorithm |
 
 ---

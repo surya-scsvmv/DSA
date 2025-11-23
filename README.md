@@ -1,15 +1,15 @@
 # 🧠 Data Structures and Algorithms (DSA) Lab Record
 
-This repository contains all my **Data Structures and Algorithms (DSA)** lab programs written in **C**, implemented from scratch to understand how core data structures work internally.
+This repository contains all my **Data Structures and Algorithms (DSA)** lab programs written in **C**, implemented from scratch to understand how each data structure works internally.
 
 ---
 
 ## 📘 Overview
 
-All programs were developed as part of the **DSA Laboratory** under the  
+These programs were developed as part of the **DSA Laboratory** under the  
 **Department of Computer Science and Engineering (Artificial Intelligence and Data Science)** at **SCSVMV University**.
 
-The experiments cover essential concepts such as searching, stacks, queues, string processing, singly linked lists, and doubly linked lists.
+The record covers essential concepts such as searching, stacks, queues, string operations, linked lists, tree traversals, and sorting algorithms.
 
 ---
 
@@ -26,16 +26,18 @@ The experiments cover essential concepts such as searching, stacks, queues, stri
 ## 📂 Programs List
 
 | No. | File Name | Description |
-|:--:|:------------------------------|:------------------------------------------------------------|
-| 1 | **Linear Search** | Sequential search in an array |
-| 2 | **Binary Search** | Efficient divide-and-conquer search algorithm |
-| 3 | **Stack Push** | Demonstrates push operation in a stack |
-| 4 | **Stack Pop** | Demonstrates pop operation in a stack |
-| 5 | **String Reversal** | Reverses a string using a stack |
-| 6 | **Infix to Postfix** | Converts infix expressions to postfix |
-| 7 | **Simple Queue** | Basic queue implementation using arrays |
-| 8 | **Circular Queue** | Queue with efficient circular indexing |
-| 9 | **Singly Linked List** | Basic linked list operations (insert/delete/traverse) |
-| 10 | **Doubly Linked List** | Doubly linked list with insertion, deletion, forward & backward traversal |
+|:--:|:-------------------------------------|:-----------------------------------------------------------|
+| 1 | **01. LinearSearch.c** | Linear / Sequential Search |
+| 2 | **02. BinarySearch.c** | Binary Search (Divide & Conquer) |
+| 3 | **03. Stack Operations Using Array.c** | Full stack implementation using arrays |
+| 4 | **04. StringReversal.c** | Reverse a string using stack |
+| 5 | **05. Infix-Postfix.c** | Convert infix expression to postfix |
+| 6 | **06. Queue Operations Using Array.c** | Queue implementation (enqueue/dequeue) |
+| 7 | **09. Single Linked List.c** | All operations on singly linked list |
+| 8 | **10. Doubly Linked List.c** | All operations on doubly linked list |
+| 9 | **11. Tree Traversal – DFS.c** | Depth First Search (Pre/In/Post Order) |
+| 10 | **12. Tree Traversal – BFS.c** | Breadth First Search using queue |
+| 11 | **13(a). QuickSort.c** | Quick Sort algorithm |
+| 12 | **13(b). QuickMerge.c** | Merge Sort algorithm |
 
 ---
